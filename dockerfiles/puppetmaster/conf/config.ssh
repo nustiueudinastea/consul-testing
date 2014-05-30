@@ -1,0 +1,2 @@
+Host git.service.consul
+    Port 2222

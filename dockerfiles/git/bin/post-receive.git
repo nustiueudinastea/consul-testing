@@ -1,0 +1,5 @@
+#!/bin/bash
+GWIP=`/sbin/ip route | awk '/default/ { print $3 }'`
+curl -X PUT -d 'true' http://$GWIP:8500/v1/kv/update/puppetmaster
+sleep 3
+curl http://jenkins.service.consul:8080/job/puppet-run/build
